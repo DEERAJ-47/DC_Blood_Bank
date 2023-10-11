@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <!-- Search -->
+    <div class="search">
+      <img src='https://i.postimg.cc/nr6mTK9K/50.jpg' border='0' alt='50'style="width:230px;"/></a><br>
+      <!---- <img src='https://i.postimg.cc/B62nHKDy/51.png' border='0' alt='51'style="width:230px;"/></a><br> -->
+      <form action="{% url 'donorlistsite' %}" method="POST">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            {{forms_search.select_blood_group}}
+            {{forms_search.select_location}}
+          </div>
+        <button type="submit" class="btn search_bt">Search</button>
+
+      </form>
+    </div>
+
+
+   {% endblock  %}
